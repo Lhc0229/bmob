@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bmob.js" ></script>
+</head>
+<body>
+<input type="text" >
+<input type="text">
+<button>提交</button>
+<script>
+    Bmob.initialize("89e2cfd6d54f94ff", "980229");
+    Bmob.debug(true);
+    input = document.getElementsByTagName('input');
+    btn = document.getElementsByTagName('button')[0];
+    btn.onclick = function(){
+        // username = input[0].value;
+        // password = input[1].value;
+        // let params = {
+        //     username,
+        //     password,
+        // }
+        // Bmob.User.register(params).then(res => {
+        //     console.log(res)
+        // }).catch(err => {
+        //     console.log(err)
+        // });
+        // const query = Bmob.Query('lhc');
+        // query.set("name","Bmob")
+        // query.set("cover","后端云")
+        // query.save().then(res => {
+        //     console.log(res)
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+        const query = Bmob.Query("_User");
+        query.find().then(res => {
+            console.log(res)
+        })
+    }
+</script>
+</body>
+</html>
